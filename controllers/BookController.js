@@ -92,7 +92,7 @@ class BookController extends Controller {
     async deleteBook(){
         Book.destroy({
             where: {
-                id: this.req.body.id
+                id: this.req.params.id
             }
         }).then(res => {
             return super.respondJson(res, true, 200);

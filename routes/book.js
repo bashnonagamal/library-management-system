@@ -15,7 +15,7 @@ router.get('/getBooks', async (req, res) => {
  * Delete Book 
  * @route DELETE api/deleteBook
  */
-router.delete('/deleteBook', async (req, res) => {
+router.delete('/deleteBook/:id', async (req, res) => {
     return await new BookController(req, res).deleteBook();
 })
 
