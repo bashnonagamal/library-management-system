@@ -20,27 +20,6 @@ class Controller {
         return this.res;
     }
 
-    /**
-     * Respond with an excel file as attachment
-     * @param filename
-     * @param workbook
-     * @returns {Promise<void>}
-     */
-    async respondExcel(filename, workbook) {
-        this.res.setHeader(
-            "Content-Type",
-            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-        );
-        this.res.setHeader(
-            "Content-Disposition",
-            "attachment; filename=" + filename + ".xlsx"
-        );
-        let controllerInstance = this;
-        return workbook.xlsx.write(this.res).then(function () {
-            
-            controllerInstance.res.status(200).end();
-          });
-    }
 }
 
 module.exports = Controller;

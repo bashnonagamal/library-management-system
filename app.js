@@ -31,5 +31,6 @@ require('./models/index.js');
 // Routes
 app.use('/api', require('./routes/book'));
 app.use('/api', require('./routes/borrower'));
+app.use('/api', require('./routes/borrowProcess'));
 
 app.listen(process.env.PORT, console.log(`Server is listening to port ` + 5000));

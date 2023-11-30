@@ -13,7 +13,6 @@ class BorrowerController extends Controller {
      * @returns {Promise<void>}
      */
     async getBorrowers() {
-        console.log("TEST");
         Borrower.findAll()
             .then(borrowers => {
                 if (!borrowers) {
