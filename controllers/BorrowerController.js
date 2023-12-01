@@ -31,7 +31,7 @@ class BorrowerController extends Controller {
     async addBorrower() {
         Borrower.create(this.req.body)
             .then(res => {
-                return super.respondJson(res, true, 200);
+                return super.respondJson("Borrower Added Successfully!", true, 200);
             }).catch(err => {
                 return super.respondJson({ message: err.message }, false, 500);s
             });
@@ -47,7 +47,7 @@ class BorrowerController extends Controller {
                 id: this.req.params.id
             }
         }).then(res => {
-            return super.respondJson(res, true, 200);
+            return super.respondJson("Borrower Updated Successfully!", true, 200);
         }).catch(err => {
             return super.respondJson({ message: err.message }, false, 500);s
         });
@@ -63,7 +63,7 @@ class BorrowerController extends Controller {
                 id: this.req.params.id
             }
         }).then(res => {
-            return super.respondJson(res, true, 200);
+            return super.respondJson("Borrower Deleted Successfully!", true, 200);
         }).catch(err => {
             return super.respondJson({ message: err.message }, false, 500);
         });

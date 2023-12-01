@@ -60,9 +60,9 @@ class BookController extends Controller {
     async addBook() {
         Book.create(this.req.body)
             .then(res => {
-                return super.respondJson(res, true, 200);
+                return super.respondJson("Book added successfully!", true, 200);
             }).catch(err => {
-                return super.respondJson({ message: err.message }, false, 500);s
+                return super.respondJson({ message: err.message }, false, 500);
             });
     }
 
@@ -76,7 +76,7 @@ class BookController extends Controller {
                 id: this.req.params.id
             }
         }).then(res => {
-            return super.respondJson(res, true, 200);
+            return super.respondJson("Book Updated successfully!", true, 200);
         }).catch(err => {
             return super.respondJson({ message: err.message }, false, 500);s
         });
@@ -92,7 +92,7 @@ class BookController extends Controller {
                 id: this.req.params.id
             }
         }).then(res => {
-            return super.respondJson(res, true, 200);
+            return super.respondJson("Book deleted successfully!", true, 200);
         }).catch(err => {
             return super.respondJson({ message: err.message }, false, 500);
         });
