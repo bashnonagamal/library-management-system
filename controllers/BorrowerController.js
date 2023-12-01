@@ -18,10 +18,7 @@ class BorrowerController extends Controller {
                 if (!borrowers) {
                     return super.respondJson({ message: "No borrowers exit" }, false, 403);
                 }
-                return super.respondJson(
-                    borrowers
-                    , true, 200);
-
+                return super.respondJson(borrowers, true, 200);
             }).catch(err => {
                 return super.respondJson({ message: err.message }, false, 500);
             });

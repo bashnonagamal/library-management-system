@@ -5,7 +5,7 @@ var BookController = require('../controllers/BookController');
 
 /**
  * Get Book list
- * @route GET api/getAllBooks
+ * @route GET api/getBooks
  */
 router.get('/getBooks', async (req, res) => {
     return await new BookController(req, res).getBooks();

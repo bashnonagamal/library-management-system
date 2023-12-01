@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.belongsToMany(models.Borrower, { through: 'borrowed_books', foreignKey: 'book_id', as: 'borrowers' });
+      this.belongsToMany(models.Borrower, { through: 'borrowedbooks', foreignKey: 'book_id', as: 'borrowers' });
     }
   };
   Book.init({

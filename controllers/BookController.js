@@ -18,10 +18,7 @@ class BookController extends Controller {
                 if (!books) {
                     return super.respondJson({ message: "No books exit" }, false, 403);
                 }
-                return super.respondJson(
-                    books
-                    , true, 200);
-
+                return super.respondJson(books, true, 200);
             }).catch(err => {
                 return super.respondJson({ message: err.message }, false, 500);
             });

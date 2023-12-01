@@ -13,25 +13,25 @@ router.post('/checkOut', async (req, res) => {
 
 /**
  * Return a book 
- * @route DELETE api/deleteBorrower
+ * @route post api/returnBook
  */
-router.delete('/returnBook', async (req, res) => {
+router.post('/returnBook', async (req, res) => {
     return await new BorrowProcessController(req, res).returnBook();
 })
 
 /**
- * Check Borrower books
- * @route POST api/addBorrower
+ * List Borrower books
+ * @route GET api/listBorrowerBooks
  */
-router.post('/listBorrowerBooks', async (req, res) => {
+router.get('/listBorrowerBooks/:borrower_id', async (req, res) => {
     return await new BorrowProcessController(req, res).listBorrowerBooks();
 })
 
 /**
  * List over due books
- * @route PUT api/addBorrower
+ * @route GET api/overDueBooks
  */
-router.put('/overDueBooks', async (req, res) => {
+router.get('/overDueBooks', async (req, res) => {
     return await new BorrowProcessController(req, res).overDueBooks();
 })
 

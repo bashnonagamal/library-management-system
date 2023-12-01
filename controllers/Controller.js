@@ -19,7 +19,6 @@ class Controller {
         this.res.status(status).send(JSON.stringify({ data }));
         return this.res;
     }
-
 }
 
 module.exports = Controller;
